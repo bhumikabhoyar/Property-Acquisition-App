@@ -678,7 +678,7 @@ def generate_pdf():
         f"Monthly Rent: Rs {monthly_rent_input:,.0f}\n"
         f"Total Rent ({rent_duration_years} yrs): Rs {total_rent_paid:,.0f}\n"
     )
-    return pdf.output(dest='S').encode('latin-1')
+    return bytes(pdf.output())
 
 st.download_button(t["download_report"], generate_pdf(), file_name="AI_Property_Report.pdf")
 # ---------------- FUTURE SCOPE (Only Add This Block) ----------------
